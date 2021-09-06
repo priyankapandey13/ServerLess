@@ -8,20 +8,35 @@ doc: `https://docs.aws.amazon.com/cli/latest/reference/lambda/list-functions.htm
 
 **Assignment 1:**
 
-command: `?`
+command: `aws s3 ls`
 
-doc: `?`
+doc: `https://docs.aws.amazon.com/cli/latest/reference/s3/`
 
-number of buckets: `?`
+number of buckets: `11`
 
 **Assignment 2:**
-filename: `?`
+filename: `week3-homework.mkv`
 
 ## Optional Assignments
 
-command: `?`
+command: `aws s3 presign s3://hyf-products-bucket/week3-homework.mkv`
 
-url: `?`
+url: `https://hyf-products-bucket.s3.amazonaws.com/week3-homework.mkv?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2F346X675XN7OAVQ%2F20210906%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20210906T120817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=52a9224b57bf84e54be871731d7de49b2877b1a02468776a6e0751ae9da1ecaa
+`
+## Optional Assignments 2
+command: `aws s3 ls s3://hyf-products-bucket --human-readable --summarize`
+
+result : `2021-08-03 17:05:31    0 Bytes christopher-was-here.json
+2021-08-26 22:32:53   11 Bytes hello-hyf.txt
+2021-08-03 17:42:51  810 Bytes package.json
+2021-08-22 14:21:08  297.4 MiB week3-homework.mkv
+2021-08-22 14:21:08  142.8 MiB week3-lessonPlan.mkv
+2021-09-04 18:19:54  430.0 MiB week4-homework-p1.mkv
+2021-09-04 18:20:57  270.9 MiB week4-homework-p2.mkv
+
+Total Objects: 7
+   Total Size: 1.1 GiB
+`
 
 **Assignment 3:**
 **Assignment 4:**
