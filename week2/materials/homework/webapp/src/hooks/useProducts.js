@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const productsData = [
   {
@@ -7,7 +7,7 @@ const productsData = [
     imageURL:
       "https://www.kirbysproduce.com/wp-content/uploads/2020/04/produce-box.jpg",
     description: "Wonderful fruits from all over the world",
-    price: "50",
+    price: "60",
     currency: "DKK",
   },
   {
@@ -25,7 +25,7 @@ const productsData = [
     imageURL:
       "https://www.kirbysproduce.com/wp-content/uploads/2020/04/produce-box.jpg",
     description: "Great box for your juicer",
-    price: "50",
+    price: "80",
     currency: "DKK",
   },
 ];
@@ -37,17 +37,30 @@ let initialProducts = productsData.map((item) => {
 function useProducts() {
   const [products] = useState(initialProducts);
   const [cart, setCart] = useState([]);
+  const [totalprice, setTotalprice] = useState([]);
 
   const addProduct = (product) => {
     let newCart = cart.concat(product);
     setCart(newCart);
   };
 
-  const removeProduct = (product) => {
-    setCart(cart.filter((item) => item.id != product.id));
+  const calculateSum = (product) => {
+    let newtotal = cart.reduce((total, next) => {
+      return total + parseInt(next.price);
+    }, 0);
+    setTotalprice(newtotal);
   };
 
-  return { products, cart, addProduct, removeProduct };
+  const removeProduct = (product) => {
+    setCart(cart.filter((item) => item.id !== product.id));
+  };
+
+  useEffect(() => {
+    calculateSum();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cart]);
+
+  return { products, cart, addProduct, removeProduct, totalprice };
 }
 
 export default useProducts;
