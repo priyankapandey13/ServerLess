@@ -29,7 +29,7 @@ function Products() {
       ).innerHTML = `<div class="danceanimation"><img src="https://i.pinimg.com/originals/57/e2/09/57e209296e586933febadf06e271a3d3.gif" alt="dancer" /></div>`;
     }, 300);
     setTimeout(function (e) {
-      window.location.href = "/";
+      window.location.href = "/index.html";
     }, 4000);
   };
 

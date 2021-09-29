@@ -4,13 +4,15 @@
 
 Sync your changes to s3 and write down your s3 bucket url.
 
-bucket url: `s3://priyankas-good-greens/`
+bucket URL: `s3://priyankas-good-greens/index.html`
+Object URL: `https://priyankas-good-greens.s3.amazonaws.com/index.html`
 
 **Assignment 5:**
 
 Right now, the website does not support https. Explain which other AWS service needs to be integrated in order to achieve this.
 
 service name: `CloudFront `
+description: `Amazon CloudFront is a content delivery network operated by Amazon Web Services. Content delivery networks provide a globally-distributed network of proxy servers that cache content, such as web videos or other bulky media, more locally to consumers, thus improving access speed for downloading the content.`
 
 **Assignment 6:**
 
